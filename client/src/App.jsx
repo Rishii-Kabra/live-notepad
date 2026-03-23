@@ -3,9 +3,7 @@ import {io} from 'socket.io-client';
 
 // initialize the socket instacne OUTSIDE the component
 // this prevents creating a new connection every time the  component re-renders.
-const URL = import.meta.env.PROD
-  ? "https://notepad-server-hqk9.onrender.com"
-  : "http://localhost:3001";
+const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
 const socket = io(URL);
 
 function App(){

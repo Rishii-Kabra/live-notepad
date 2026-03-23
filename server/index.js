@@ -12,7 +12,7 @@ const httpServer = createServer(app);
 // initialize socket.io and point it to our HTTP server
 const io = new Server(httpServer, {
     cors: {
-        origin: "*", 
+        origin: process.env.FRONTEND_URL, 
         methods: ["GET", "POST"]
     }
 });
